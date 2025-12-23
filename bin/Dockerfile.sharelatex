@@ -1,0 +1,10 @@
+FROM sharelatex/sharelatex:latest
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    texlive-publishers \
+    texlive-xetex \
+    texlive-latex-recommended \
+    texlive-latex-extra \
+    texlive-fonts-recommended \
+ && rm -rf /var/lib/apt/lists/* \
+ && mktexlsr

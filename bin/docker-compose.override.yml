@@ -1,0 +1,13 @@
+services:
+  sharelatex:
+    build:
+      context: .
+      dockerfile: Dockerfile.sharelatex
+    ports:
+      - "8080:80"
+    environment:
+      - TEX_LIVE_DOCKER_IMAGE=texlive/texlive:latest
+    volumes:
+      - ~/sharelatex_data:/var/lib/overleaf
+      - ~/texmf-local:/usr/local/texlive/texmf-local
+
